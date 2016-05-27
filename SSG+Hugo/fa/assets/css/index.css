@@ -1,0 +1,136 @@
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: url(../fonts/Lato-Italic.ttf);
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/Lato-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Gandom';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Gandom.ttf);
+}
+
+@font-face {
+  font-family: 'Gandom';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/Lato-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Patua One';
+  src: url(../fonts/PatuaOne-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Droid';
+  src: url(../fonts/DroidNaskh-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Noto';
+  src: url(../fonts/NotoNaskhArabic-Regular.ttf);
+}
+
+body, p {
+  font-family: 'Gandom', 'Lato';
+  font-weight: 400;
+}
+
+h1 {
+  font-family: 'Droid', 'Patua One';
+  font-size: 80px;
+  text-shadow: 0px 7px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+
+h2, h3 {
+   font-family: 'Noto', 'Lato';   
+}
+
+/*==================*/
+@font-face {
+  font-family: 'Noto';
+  src: url(../fonts/NotoNaskhArabic-Regular.ttf);
+}
+
+body, h1, p {
+  color: white;
+}
+
+body {
+  transition: 0.5s
+}
+
+div, p, canvas, i, em {
+  transition: 1s
+}
+
+.center-text {
+  text-align: center;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.white-bg {
+  background-color: white;
+}
+
+.white, .white h1, .white p {
+  color: black;
+  text-shadow: none;
+}
+
+.gray-bg {
+  background-color: gray;
+}
+
+.red-bg {
+  background-color: rgb(255, 68, 68);
+}
+
+.orange-bg {
+  background-color: rgb(255, 187, 51);
+}
+
+.green-bg {
+  background-color: rgb(153, 204, 0);
+}
+
+.purple-bg {
+  background-color: rgb(170, 102, 204);
+}
+
+.blue-bg {
+  background-color: rgb(51, 181, 229);
+}
+
+.step {
+  width: 900px;
+  padding: 40px;
+  font-size: 48px;
+}
+
+.step:not(.active) {
+  opacity: 0;
+}

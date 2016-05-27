@@ -1,0 +1,31 @@
+.odyssey-bg {
+  background: url('../img/bg1.png'), url('../img/bg2.png') no-repeat 100% 100%;
+  background-blend-mode: overlay;
+}
+
+.line-through-text {
+    position: relative;
+}
+
+.line-through-text:before {
+    border-bottom: 4px solid red;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 50%;
+}
+
+.small {
+    font-size: 46px;
+}
+
+.orange-text {
+    color: rgb(255, 187, 51) !important;
+}
+
+.code {
+    background-color: #000;
+    color: #00ff12;
+    display: block;
+    margin-bottom: 51px;
+}

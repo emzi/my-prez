@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Static Site Generators</title>
+  <script src="assets/js/jquery-1.11.2.min.js"></script>
+  <script src="assets/js/jcanvas.min.js"></script>
+  <script src="assets/js/queue.min.js"></script>
+  <script src="assets/js/geometry.js"></script>
+  <script src="assets/js/graph.js"></script>
+  <script src="assets/js/triangulate.js"></script>
+  <script src="assets/js/sim.js"></script>
+  <script src="assets/js/index.js"></script>
+  <script src="assets/js/banana.js"></script>
+  <script src="assets/js/key.js"></script>
+  <script src="assets/js/ty.js"></script>
+  <script src="assets/js/sheet.js"></script>
+  <script src="assets/js/guitar.js"></script>
+  <script src="assets/js/steps.js"></script>
+  <link rel="stylesheet" type="text/css" href="assets/css/index.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/steps.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/added.css" />
+</head>
+<body>
+<div id="impress">
+
+<div id="step-title" class="step step2 odyssey" data-x="-1000" data-y="0" data-z="1000" data-rotate-x="180">
+  <h3 dir="rtl" class="title small">مورد عجیب <span class="line-through-text">بنجامین باتن</span></h3>
+  <h1 dir="rtl" class="title">سایت‌های استاتیک</h1>
+  همراه با معرفی هیوگو
+  <p dir="rtl" class="author">م. ذ.<br>
+  @emzi, Hadron</p>
+  <p dir="rtl" class=institution>گروه کاربران گنو/لینوکس کرمان</p>
+</div>
+
+<div id="step-turn-this" class="step orange" data-x="0" data-y="-500" data-z="-1000" style="margin-top: -5px;">
+  <img class="center-block" src="assets/img/disclaimer.png" height="400px" style="margin-top: -5px;">
+  <h2 dir="rtl" class="center-text">رفع ادعا:</h2>
+  <h2 dir="rtl" class="center-text"> توسعه‌دهنده وب <span style="font-family: 'Noto';font-size: 80px; text-shadow: 0px 7px rgba(0, 0, 0, 0.5);">نیستم</span> </h2>
+</div>
+
+<div id="step-into-this" class="step white" data-x="0" data-y="0" data-z="0">
+  <h1 dir="rtl" class="center-text orange-text">-->نمایش ویدیو<--</h1>
+  <p dir="rtl" class="pp center-text">پیوند ویدیو: http://uploadkon.ir/fl/dd/85186</p>
+  <hr>
+  <p dir="rtl" class="center-text">آن‌چه در این ارائه بحث خواهد شد</p>
+  <p dir="rtl" class="pp">
+  درباره سایت‌های ایستا (گذشته vs امروز)<br>
+  درباره سایت‌سازهای ایستا<br>
+  درباره Hugo<br>
+  سایت‌مان را در کجا میزبانی کنیم<br>
+  تهیه دامنه و اتصال آن به رپوی گیت‌هاب</p>
+</div>
+
+<div id="step-why-care" class="step white center-text" data-x="600" data-y="0" data-z="0" data-rotate-z="-90">
+  <h1 dir="rtl" class="orange-text">آن روزها</h1>
+  <img class="center-block" src="assets/img/those-days.jpg" height="650px">   
+</div>
+
+<div id="step-physics" class="step white center-text" data-x="1100" data-y="0" data-z="400" data-rotate-y="-50">
+  <h1 dir="rtl" class="orange-text">این روزها</h1>
+  <img class="center-block" src="assets/img/these-days.jpg" height="650px">   
+</div>
+
+<div id="step-interp" class="step white center-text" data-x="1700" data-y="-200" data-z="800"
+  data-rotate-y="-20" data-rotate-z="-20">
+  <h1 dir="rtl" class="orange-text pp">روند انتشار محتوا توسط سایت‌سازهای ایستا</h1>
+  <img class="center-block" src="assets/img/mincer-ssg.png" height="650px">
+</div>
+
+<div id="step-art" class="step white" data-x="2500" data-y="-100" data-z="800"
+  data-rotate-y="20" data-rotate-z="20">
+  <h1 dir="rtl" class="orange-text pp">روند انتشار محتوا در CMSها</h1>
+  <img class="center-block" src="assets/img/mincer-cms.png" height="700px">
+</div>
+
+<div id="step-cool" class="step step2 red" data-x="3200" data-y="-200" data-z="1000"
+  data-rotate-z="-20">
+  <h1 dir="rtl" class="center-text">چرا CMS نه؟!</h1>
+  <p dir="rtl">
+  - منابع سیستم را می‌خورد: <span class="pp">کوئری روی کل پایگاه داده کوئری به ازای هر درخواست، ...</span><br>
+  - کاربر محتوای استاتیک دریافت می‌کند، پس چرا یک سیستم داینامیک؟!</span><br>
+  - مشکلات امنیتی: <span class="pp">همه می‌دانیم که چقدر در این زمینه مستعد هستند!</span><br>
+  - دان‌شدن: <span class="pp">مشکلات حین به‌روزرسانی، کم آمدن منابع سیستمی، خطای پایگاه داده و...</span>
+  </p>
+</div>
+
+<div id="step-sim-1" class="step step3 white sim" data-x="4000" data-y="0" data-z="0">
+  <h1 dir="rtl" class="center-text">چرا ایستا؟</h1>
+  <p dir="rtl">
+  <span style="color: green;">دردسرهای امنیتی و زحمت نگه‌داری کم‌تر: </span>نه پایگاه داده ای، نه بروزرسانی و...<br>
+  <span style="color: green;">کاربر همانی را می‌گیرد که روی سرور است: </span><span style="font-size: 30px;">ثانیه‌هایی برای تولید برگهٔ وب درخواست شده تلف نمی‌شود</span><br>
+  <span style="color: green;">مصرف منابع کم‌تر:</span> فقط به یک وب‌سرور نیاز دارید<br>
+  <span style="color: green;">هزینه پایین:</span> حتی رایگان (:<br>
+  هاها، <span style="color: green;">آفلان بلاگینگ:</span> پست‌های وبلاگتان را در ویرایش‌گر متن مورد پسندتان بنویسید.
+  </p>
+</div>
+
+<div id="step-sim-2" class="step white sim" data-x="5000" data-y="0" data-z="0">
+  <h2 dir="rtl">چه چیزی نیست</h2>
+  سایت ایستا != <span style="color: red;">محتوای</span> ایستا<br>
+  <hr>
+  <h2 dir="rtl">چه چیزی هست</h2>
+  سایت ایستا == <span style="color: green;">ساختمان</span> ایستا  
+  </div>
+
+<div id="step-sim-3" class="step white sim" data-x="6000" data-y="0" data-z="0">
+  <h2 dir="rtl">کمبودهای یک سایت ایستا</h2>
+  <p dir="rtl">
+  - نداشتن سامانه ارسال دیدگاه درونی<br>
+  - نداشتن امکان فرم‌سازی درونی: برگه تماس با ما، فرم نظرسنجی و...<br>
+  - کم بودن پوسته های آماده<br>
+  - نبود رابط گرافیکی
+  </p>
+</div>
+
+<div id="step-good-news-proof-2" class="step step3 green"
+  data-x="5150" data-y="600" data-z="0" data-rotate-z="-90">
+  <h1 dir="rtl" class="center-text">اگر برای وبلاگمان کامنت بخواهیم؟</h1>
+  <p dir="rtl">
+  - دیسکاس / Muut / و...<br>
+  - انجمن‌سازها مانند: Discourse / nodeBB / Vanilla که با پلاگین‌هایشان می‌توانند به عنوان سیستم کامنت‌گذاری استفاده شوند<br>
+  </p>
+</div>
+
+<div id="step-sim-4" class="step white sim center-text" data-x="7000" data-y="0" data-z="0">
+  <p dir="rtl">سایت‌سازهای موجود</p>
+  <img src="assets/img/staticgen.png" height="630px">
+</div>
+
+<div id="step-sim-5" class="step step2 white sim" data-x="8000" data-y="0" data-z="0">
+  <img src="assets/img/doors.png" width="100%">
+</div>
+
+<div id="step-sim-6" class="step step3   white sim" data-x="9000" data-y="0" data-z="0">
+  <h1 dir="rtl" class="center-text orange-text">معیارهای انتخاب</h1>
+  <p dir="rtl">
+  - سریع باشد: چون با نوشتن هر پست، باید کل سایت دوباره ساخته شود<br>
+  - ویژگی‌های معمول را داشته باشد: سرور توسعه، سینتکس-هایلایتینگ و...<br>
+  - مستقل از پلتفرم باشد: ویندوز، لینوکس، مک و...<br>
+  - کاربر را مجبور به یادگیری زبان برنامه‌نویسی نکند<br>
+  - دست‌کم از یکی از زبان‌های مارک‌آپ متن‌نویسی را پشتیبانی کند، مثلا Markdown<br>
+  - نرم‌افزار آزاد باشد<br>
+  - حول آن جامعه‌کاربری شکل گرفته باشد: انجمن پشتیبانی آنلاین و...<br>
+  - مستندات خوبی داشته باشد
+  </p>
+</div>
+
+<div id="step-better" class="step step2 orange" data-x="3500" data-y="600" data-z="0" data-rotate-z="-90">
+  <h1 dir="rtl" class="center-text">سایت‌ساز ایستا چگونه کار می‌کند؟</h1>
+  <p dir="rtl">
+  - پست‌ها و فایل‌های اشاره شده در پست‌ها را جمع می‌کند<br>
+  - کانورترهای متن و پوسته را فرا می‌خواند<br>
+  - ست‌ها را به HTML برگردانده و در پوسته جا می‌دهد<br>
+  - خروجی ایستا (HTML+CSS+JS) را تحویل می‌دهد.
+  </p>
+</div>
+
+<div id="step-better-footnote" class="step center-text gray" data-x="3490" data-y="265" data-scale="0.05" data-rotate-z="-90">
+  <p dir="rtl">
+  استفاده ازش ساده است...  باور نمی‌کنید؟!
+  </p>
+  <h1 dir="rtl">چطور استفاده کنید؟</h1>
+  <p dir="rtl">
+  - شما فقط پست را می‌نویسید. همین!<br>
+</div>
+
+<div id="step-suffer" class="step orange" data-x="3650" data-y="600" data-z="0" data-rotate-z="-90">
+  <h1 dir="rtl" class="center-text">Markdown عالیه!</h1>
+  <p dir="rtl" class="pp center-text">
+سازندگان: J. Gruber و A. Awartz
+  <br>
+  وظیفه: کانورتر Text به HTML
+  </p>
+  <p dir="rtl">
+  - خوانایی بالای کد<br>
+  - سادگی نوشتن<br>
+  - و در ویرایش‌گر دلخواه‌تان
+  </p>
+</div>
+
+<div id="step-deal-with" class="step step2 orange center-text" data-x="3800" data-y="600" data-z="0" data-rotate-z="-90">
+  <h2 dir="rtl">چند قاعده نگارشی مارکداون</h2>
+  <img src="assets/img/md.png">
+</div>
+
+<div id="step-triangulation" class="step step2 green" data-x="4000" data-y="600" data-z="0" data-rotate-z="-90">
+  <p dir="rtl">
+  تست تبدیل Markdown به HTML
+  </p>
+  <span class="code">
+  ❭ echo -e "#Hello World \n\n_Hello World_" > test.md<br>
+  ❭ markdown test.md > test.html<br>
+  ❭ xdg-open $_ #It opens the created test.md file<br>
+  ❭ xdg-open test.html #It opens converted test.html file
+  </span>
+</div>
+
+<div id="step-good-news" class="step green" data-x="4500" data-y="600" data-z="0" data-rotate-z="-90">
+  <p dir="rtl" class="center-text">خارج از موضوع:</p>
+  <h1 dir="rtl" class="center-text">pandoc</h1>
+  <p dir="rtl" class="center-text">
+  متن‌های نوشته شده با Markdown را به فرمت‌های دیگر مانند pdf، ‏odt، ‏tex و... تبدیل می‌کند.
+  </p>
+  <span class="code">❭ pandoc test.md -o test.odt</span>
+</div>
+
+<!-- ========== Hugo ==========-->
+
+<div id="step-good-news-proof-3" class="step purple" data-x="5700" data-y="600" data-z="0" data-rotate-z="-90">
+  <img class="center-block" src="assets/img/hugo_logo.png" height="650px">
+</div>
+
+<div id="step-pslg" class="step step3 purple"
+  data-x="6400" data-y="600" data-z="0" data-rotate-x="90">
+  <h2 dir="rtl" class="center-text" >ویژگی‌های هیوگو</h2>
+  <p dir="rtl">
+‫  - <span style="color: pink;">سریعه</span>: در حد میلی‌ثانیه کارش رو انجام می‌ده<br>
+‫  - <span style="color: pink;">انعطاف‌پذیره</span>: مناسب برای ساخت بلاگ، ویکی، پورت‌فولیو و...<br>
+‫  - <span style="color: pink;">ویژگی‌های معمول رو داره</span>: tags، ‏categories، ‏RSS feeds، ‏archives و...<br>
+‫  - <span style="color: pink;">پوسته‌های آماده</span>: gohugo.io/themes | که البته برای فارسی باید rtl شوند<br>
+‫  - <span style="color: pink;">پشیتبانی از</span>: <span class="pp">Markdown، ‏reStructuredText، ‏Wiki، ‏BBCode، ‏Textile و HTML</span><br>
+‫  - <span style="color: pink;">سرور پیش‌نمایش</span>: امکان می‌دهد ویرایش‌هایتان را به‌صورت زنده ببینید<br>
+‫  - <span style="color: pink;">پشتبانی پیش‌فرض از سینتکس هایلایتینگ</span><br>
+‫  - <span style="color: pink;">پشتبانی پیش‌فرض و توکار از سامانه کامنت‌گذاری Disqus</span>
+
+  </p>
+</div>
+
+<div id="step-pslg-example" class="step step2 purple" data-x="6400" data-y="600" data-z="800" data-rotate-x="90">
+  <h2 dir="rtl" class="center-text">از اینجا شروع کنیم</h2>
+  <span class="code">
+  <img src="assets/img/install.png"><br>
+    ❭ sudo apt install hugo # Ubuntu 16.04<br>
+    ❭ pacaur -S hugo # (-Syu), Archlinux<br>
+  </span>
+  <span class="code">
+    ❭ hugo help<br>
+    ❭ hugo help new
+  </span>
+</div>
+
+<div id="step-better-news" class="step purple" data-x="6400" data-y="600" data-z="1600" data-rotate-x="90">
+  <h3 dir="rtl" class="center-text">بیایید یک سایت نمونه بسازیم</h3>
+  <span  class="center-text" dir="rtl" style="margin-left: 54%;"># ساخت اسکلت سایت</span>
+  <span class="code">❭ hugo new site my-test<br></span>
+  <span class="code">❭ cd $_; ls -1F</span>
+  </span>
+  <pre>
+  - archetypes/
+  - config.toml
+  - content/
+  - data/
+  - layouts/
+  - static/
+  </pre>
+</div>
+
+<div id="step-simple-triangulation" class="step step3 purple" data-x="6400" data-y="600" data-z="2400" data-rotate-x="90">
+  <span style="background-color: #818181; display:block;">
+    <span class="code">❭ mkdir -p themes</span>
+    <span style="font-family: 'ubuntu mono';"># Let's put a theme there:</span>
+    <span class="code" style="font-size: 34px;">❭ git clone git@github.com:emzi/hugo-phlat-theme-rtl.git themes/hugo-phlat-theme-rtl</span>
+    <span dir="rtl" style="margin-left: 71%; font-family: 'ubuntu mono';"># یا این یکی پوسته:</span>
+    <span class="code" style="font-size: 28px;">❭ git clone git@github.com:samsam-ahmadi/hugo-future-imperfect-rtl.git themes/hugo-future-imperfect-rtl</span>
+  </span>
+  <hr>
+  <span style="background-color: #818181; display:block;">
+    <span class="code">
+    ❭ mv -f themes/hugo-phlat-theme-rtl/exampleSite-rtl/* .<br>
+    ❭ rm -r themes/hugo-phlat-theme-rtl/.git
+    </span>
+     <p dir="rtl"># پروندهٔ 'config.toml' را متناسب با داده های خود تنظیم کنید.</p>
+  </span>
+</div>
+
+<div id="step-simple-triangulation" class="step purple" data-x="6400" data-y="600" data-z="2400" data-rotate-x="90">
+<h3 dir="rtl" class="center-text" >Let's build/serve it</h3>
+  <span style="background-color: #818181; display:block;">
+    <span class="code">❭ hugo</span>
+    <span style="font-family: 'ubuntu mono'; font-size: 30px;" dir="rtl">دستور بالا سایت استاتیک را تولید و در یک پوشه جدید قرار می دهد</span>
+    <span class="code">❭ ls</span>
+    <span style="font-family: 'ubuntu mono';">
+      archetypes  config.toml  content<br>data  layouts  <span style="color: pink;">public</span>  static
+    </span>
+  </span>
+  <hr>
+  <span style="background-color: #818181; display:block;">
+    <span class="code">❭ hugo server</span>
+    <span style="font-family: 'ubuntu mono';">Available at http://localhost:1313</span>
+  </span>
+</div>
+
+<div id="step-simple-triangulation" class="step step2 purple" data-x="6400" data-y="600" data-z="2400" data-rotate-x="90">
+  <span  class="center-text" dir="rtl" style="margin-left: 77%;"># معرفی آپشن‌ها</span>
+  <span class="code">
+    ❭ hugo -v #verbos for debuging<br>
+    ❭ hugo --bind "0.0.0.0" --port 4321<br>
+    ❭ hugo server --theme=X --buildDrafts --buildFuture
+  </span>
+</div>
+
+<!-- ============== Go Template ============== -->
+
+<div id="step-flip-algo" class="step step2 red" data-x="500" data-y="0" data-z="0">
+  <h2 class="center-text">موتور مولد پوسته</h2>
+  <li dir="rtl" style="margin-left: 35%;">هیوگو از Go template library استفاده می‌کند</li>
+  <li dir="rtl" style="margin-left: 15%;">تابع‌ها و متغیرها در Go Template داخل {{ }} تعریف می‌شوند:</li>
+  <p dir="rtl" style="font-size: 40px">
+  - تابع افزودن: {{ add 1 2 }}<br>
+  - جانگه‌دار محتوا: {{ content }}<br>
+  - تعریف یک متغیر: <span dir="ltr">{{ $addr := "Azadi Squre"}}</span> و استفاده به صورت <span dir="ltr">{{ $addr }}</span>
+  </p>
+</div>
+
+<!-- ============== Hosting ============== -->
+
+<div id="step-flip-algo-intro" class="step green" data-x="1500" data-y="0" data-z="0" data-rotate-x="180">
+  <h2 dir="rtl">میزبانی رایگان سایتتان در</h2>
+  <p>Github | Gitlab | Aerobatic (via Bitbucket) | Surge.sh | Dropbox | Amazon S3 | Anywhere that can serve static pages!</p>
+</div>
+
+<div id="step-delaunay" class="step step2 blue center-text" data-x="6393" data-y="700" data-z="2373" data-rotate-x="90">
+  <h1 dir="rtl">میزبانی روی 'Github Pages'</h2>
+</div>
+
+<div id="step-delaunay-example" class="step step2 blue" data-x="6393" data-y="700" data-z="2373">
+  <h3 dir="rtl">در گیت‌هاب پرونده‌های HTML  درون دو نوع رپو سرو می‌شوند: </h3><br>
+ <p dir="rtl">
+  - هر برنچ با نام <b>gh-pages</b><br>
+  - رپویی با نام <b>user.github.io</b> 
+  </p>
+</div>
+
+<div id="step-dalaunay-sadly-1" class="step gray center-text" data-x="500" data-y="6000" data-z="0" data-rotate-y="360">
+  <h2 dir="rtl">CNAME file</h2>
+</div>
+
+<!-- ============== git ============== -->
+
+<div id="step-simple-triangulation-better" class="step purple" data-x="6393" data-y="600" data-z="2365" data-rotate-x="90"
+  data-scale="0.01">
+    <h2 dir="rtl" class="center-text" >آماده استفاده از <span style="background-color: black; color: #fff;">git</span></h2>
+    برای میزبانی سایت در گیت‌هاب
+</div>
+
+<div id="step-simple-triangulation-bad" class="step step2 purple" data-x="6393" data-y="600" data-z="2373" data-rotate-x="90"
+  data-scale="0.01">
+  # Install git
+  <span class="code">
+    ❭ sudo apt install git #Debian, Ubuntu<br>
+    ❭ sudo dnf install git #Fedora<br>
+    ❭ sudo pacman -S git # (-Syu), Archlinux<br>
+  </span>
+  <br>
+  # config git
+  <span class="code">
+      ❭ git config --global user.name "USERNAME"<br>
+      ❭ git config --global user.email "EMAIL"
+  </span>
+  <span class="code" style="font-size: 34px;">
+      ❭ git config --global core.excludesfile /path/to/gitignore_global<br>
+      ❭ git config --global core.editor &lt;preferred editor, such as: nano, vim, etc&gt;
+  </span>
+</div>
+
+<div id="step-quality" class="step step3 purple" data-x="6393" data-y="650" data-z="2373" data-rotate-x="90"
+  data-scale="0.1">
+  # init the repo
+  <span class="code">
+    ❭ git init<br>
+    ❭ git remote add origin git@github.com:user/repo.git
+  </span>
+  <hr>
+  <span style="background-color: #818181; display:block;">
+    <span class="code">
+      ❭ git submodule add git@github.com:user/theme.git themes/theme<br>
+    </span>
+    # Instead of <i style="font-family: 'Ubuntu Mono Italic'; color: #00ff12;">mkdir -p themes</i><br>
+    # If you clone, remove its .git directory
+  </span>
+  <hr>
+  <span style="background-color: #818181; display:block;">
+    <span class="code">
+      ❭ mv themes/theme/config.toml .<br>
+    </span>
+    # Edit 'config.toml'
+  </span>
+  <hr>
+  <span class="code">
+    ❭ git commit -m 'INIT'<br>
+    ❭ git push origin master -u
+  </span>
+</div>
+
+<!-- ========== Deployment ==========-->
+
+<div id="step-cdt" class="step step2 center-text blue" data-x="6393" data-y="0" data-z="0">
+  <h2>Deploy by 'git subtree' to github</h2>
+</div>
+
+<div id="step-cdt-example" class="step blue" data-x="5500" data-y="0" data-z="0" data-rotate-y="50">
+  <h2 class="center-text">Deploy by Wercker.com</h2>
+  <p class="center-text" class="pp" >New to CI?<br>
+  هر زمان که کامیتی را روی مخزن بفرستید، کد داخل رپو توسط ورکر ساخته می‌شود.<br>
+  - ورکر یک سرویس CI عالی است که از داکر به عنوان محیط ساختش استقاده می‌کند
+  </p>
+</div>
+
+<div id="step-delaunay-quality" class="step blue" data-x="4700" data-y="0" data-z="0">
+  <h2 class="center-text">Deploy by:</h2>
+  <p class="center-text">github.com/X1011/git-directory-deploy</p>
+
+  #Push to a gh-pages branch
+  <span class="code">
+    ❭ hugo -d dist<br>
+    ❭ ./deploy.sh<br>
+    ❭ rm -rf dist/
+  </span>
+</div>
+
+<div id="step-edge-reversed" class="step blue" data-x="3700" data-y="150" data-z="0" data-rotate-y="0" data-rotate-z="90">
+  <h1 dir="rtl" class="center-text" >POSTs</h1>
+  <span class="code">
+    ❭ hugo new post/title-for-post.md
+  </span>
+  
+</div>
+
+<div id="step-flip-2" class="step blue" data-x="2500" data-y="0" data-z="0" data-rotate-y="180">
+  <p dir="rtl" class="pp">Each posts starts with a block of TOML/YAML/JSON front matter</p>
+  <pre>
+    +++
+    date = "2016-05-19T17:40:53+04:30"
+    description = "DESCRIPTION"
+    tags = ["TAG1",  "TAG2"]
+    title = "THIS IS A TITLE"
+    +++
+  </pre>
+  <p dir="rtl" class="pp">Post file name structure: YYYY-MM-DD-TITLE.md</p>
+</div>
+
+<div id="step-delaunay-maxmin" class="step red center-text" data-x="500" data-y="5000" data-z="0">
+  <h2>Domain Provider: <span class="flip">nic.ir</span></h2>
+  <p dir="rtl">و نمایندگان فروش: bertina، ‏hostiran و...</p>
+</div>
+
+<div id="step-flip-visu" class="step gray" data-x="500" data-y="6000" data-z="0">
+  <h2 class="center-text">DNS Provider: <span class="flip">CloudFlare</span></h2>
+</div>
+
+<div id="step-ty" class="step purple" data-x="0" data-y="2800" data-z="800" data-rotate-x="90"
+  data-rotate-z="10">
+  <canvas class="center-block" width="900" height="800"></canvas>
+</div>
+
+<script src="assets/js/impress.js"></script>
+</body>
+</html>
